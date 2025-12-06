@@ -2,17 +2,28 @@
 
 @section('main_content')
         <h1>Category Edit</h1>
-        <table border="1">
+        <div class="card col-md-6">
+            <div class="card-body">
+        <table class="table table-bordered mb-0">
             <tbody>
-                <a href="{{ route('category_list') }}">Back</a>
+                <div class="row mt-2">
+                <div class="col-md-4">
                 <div>
-                    <label for="name">Name:</label>
-                    <input type="text" name="name" id="name">
+                    <label for="name" class="form-label">Name:</label>
+                    <input type="text" name="name" id="name" class="form-control">
                 </div>
+</div>
+</div>
 
+                <div class="row mt-2">
+                <div class="col-md-12">
                 <div>
-                    <button type="submit">Submit</button>
+                    <button type="submit" class="btn btn-grd-primary px-4">Submit</button>
                 </div>
+</div>
+</div>
             </tbody>
         </table>
+</div>
+</div>
 @endsection

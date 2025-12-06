@@ -24,9 +24,9 @@
                     <td>2025-12-06</td>
                     <td>2025-12-06</td>
                     <td>
-                        <a class="btn btn-danger px-5"
-                        href="{{ route('brand_edit') }}">Edit</a></br>
                         <a class="btn btn-primary px-5"
+                        href="{{ route('brand_edit') }}">Edit</a></br>
+                        <a class="btn btn-danger px-5"
                         href="{{ route('brand_delete') }}">Delete</a>
                     </td>
                 </tr>
@@ -36,9 +36,9 @@
                     <td>2025-12-06</td>
                     <td>2025-12-06</td>
                     <td>
-                       <a class="btn btn-danger px-5"
-                       href="{{ route('brand_edit') }}">Edit</a></br>
                        <a class="btn btn-primary px-5"
+                       href="{{ route('brand_edit') }}">Edit</a></br>
+                       <a class="btn btn-danger px-5"
                        href="{{ route('brand_delete') }}">Delete</a>
                     </td>
                 </tr>
