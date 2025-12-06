@@ -19,6 +19,14 @@
             <a href="{{ route('category_list') }}">
                     <div class="parent-icon"><i class="material-icons-outlined">join_right</i>
                     </div>
+                    <div class="menu-title">Category</div>
+                </a>
+            </li>
+            
+                      <li>
+            <a href="{{ route('brand_list') }}">
+                    <div class="parent-icon"><i class="material-icons-outlined">join_right</i>
+                    </div>
                     <div class="menu-title">Brand</div>
                 </a>
             </li>   
