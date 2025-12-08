@@ -5,6 +5,7 @@
     <div class="card">
         <div class="card-header">
             <a href="{{ route('category_create') }}" class="btn btn-primary px-5">Add New Category</a>
+        </div>
             <table class="table table-bordered mb-0">
                 <thead>
                     <tr>

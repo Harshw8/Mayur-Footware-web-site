@@ -1,7 +1,7 @@
 @extends('backend.layout.master_layout')
 
 @section('main_content')
-    <h1>Product Edit</h1>
+    <h1>Product Add</h1>
     <div class="card col-md-6">
         <div class="card-body">
             <table class="table table-bordered mb-0">
