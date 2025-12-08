@@ -16,7 +16,7 @@
           <ul class="metismenu" id="sidenav">
 
           <li>
-            <a href="{{ route('category_list') }}">
+            <a href="{{ route('backend.category_list') }}">
                     <div class="parent-icon"><i class="material-icons-outlined">join_right</i>
                     </div>
                     <div class="menu-title">Category</div>
@@ -24,7 +24,7 @@
             </li>
             
                       <li>
-            <a href="{{ route('brand_list') }}">
+            <a href="{{ route('backend.brand_list') }}">
                     <div class="parent-icon"><i class="material-icons-outlined">join_right</i>
                     </div>
                     <div class="menu-title">Brand</div>
@@ -32,7 +32,7 @@
             </li> 
             
              <li>
-            <a href="{{ route('product_list') }}">
+            <a href="{{ route('backend.product_list') }}">
                     <div class="parent-icon"><i class="material-icons-outlined">join_right</i>
                     </div>
                     <div class="menu-title">Product</div>

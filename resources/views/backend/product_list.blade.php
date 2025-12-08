@@ -4,7 +4,7 @@
     <h1>Product List</h1>
     <div class="card">
         <div class="card-header">
-            <a href="{{ route('product_create') }}" class="btn btn-primary px-5">Add New Product</a>
+            <a href="{{ route('backend.product_create') }}" class="btn btn-primary px-5">Add New Product</a>
 </div>    
             <table class="table table-bordered mb-0">
                 <thead>
@@ -42,8 +42,8 @@
                         <td>2025-12-06</td>
                         <td>2025-12-06</td>
                         <td>
-                            <a class="btn btn-primary px-5" href="{{ route('product_edit') }}">Edit</a></br>
-                            <a class="btn btn-danger px-5" href="{{ route('product_delete') }}">Delete</a>
+                            <a class="btn btn-primary px-5" href="{{ route('backend.product_edit') }}">Edit</a></br>
+                            <a class="btn btn-danger px-5" href="{{ route('backend.product_delete') }}">Delete</a>
                         </td>
                     </tr>
                     <tr>
@@ -61,8 +61,8 @@
                         <td>2025-12-06</td>
                         <td>2025-12-06</td>
                         <td>
-                            <a class="btn btn-primary px-5" href="{{ route('product_edit') }}">Edit</a></br>
-                            <a class="btn btn-danger px-5" href="{{ route('product_delete') }}">Delete</a>
+                            <a class="btn btn-primary px-5" href="{{ route('backend.product_edit') }}">Edit</a></br>
+                            <a class="btn btn-danger px-5" href="{{ route('backend.product_delete') }}">Delete</a>
                         </td>
                     </tr>
                 </tbody>

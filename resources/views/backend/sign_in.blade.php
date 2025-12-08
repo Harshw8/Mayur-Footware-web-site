@@ -42,7 +42,7 @@
                             <p class="mb-0">Enter your credentials to login your account</p>
 
                             <div class="form-body my-5">
-                                <form class="row g-3" action="{{ route('authenticate') }}" method="POST">
+                                <form class="row g-3" action="{{ route('backend.authenticate') }}" method="POST">
                                     @csrf
                                     <div class="col-12">
                                         <label for="inputEmailAddress" class="form-label">Email</label>
@@ -103,7 +103,7 @@
                                         <div class="text-start">
                                             <p class="mb-0">Don't have an account yet? 
                                                 <a
-                                                    href="{{ route('register') }}">
+                                                    href="{{ route('backend.register') }}">
                                                     Sign up here
                                                 </a>
                                             </p>

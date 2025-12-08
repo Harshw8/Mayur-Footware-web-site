@@ -10,6 +10,14 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('category-list', fn() => redirect('/backend/category-list'));
+Route::get('brand-list', fn() => redirect('/backend/brand-list'));
+Route::get('product-list', fn() => redirect('/backend/product-list'));
+Route::get('login', fn() => redirect('/backend/login'));
+Route::get('register', fn() => redirect('/backend/register'));
+
+Route::prefix('backend')->name('backend.')->group(function () {
+
 Route::get('category-list', [CategoryController::class, 'index'])->name('category_list');
 Route::get('category-edit', [CategoryController::class, 'edit'])->name('category_edit');
 Route::get('category-create', [CategoryController::class, 'create'])->name('category_create');
@@ -28,3 +36,5 @@ Route::get('product-delete', [ProductController::class, 'delete'])->name('produc
 Route::get('login', [AuthenticateController::class, 'singIn'])->name('login');
 Route::post('authenticate', [AuthenticateController::class, 'authenticateCheck'])->name('authenticate');
 Route::get('register', [AuthenticateController::class, 'register'])->name('register');
+
+});
