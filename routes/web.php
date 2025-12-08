@@ -5,6 +5,7 @@ use App\Http\Controllers\backend\CategoryController;
 use App\Http\Controllers\backend\BrandController;
 use App\Http\Controllers\backend\ProductController;
 use App\Http\Controllers\backend\AuthenticateController;
+use App\Http\Controllers\backend\ProfileController;
 
 Route::get('/', function () {
     return view('welcome');
@@ -15,6 +16,8 @@ Route::get('brand-list', fn() => redirect('/backend/brand-list'));
 Route::get('product-list', fn() => redirect('/backend/product-list'));
 Route::get('login', fn() => redirect('/backend/login'));
 Route::get('register', fn() => redirect('/backend/register'));
+Route::get('dashboard', fn() => redirect('/backend/dashboard'));
+Route::get('profile-update-password', fn() => redirect('/backend/profile-update-password'));
 
 Route::prefix('backend')->name('backend.')->group(function () {
 
@@ -36,5 +39,13 @@ Route::get('product-delete', [ProductController::class, 'delete'])->name('produc
 Route::get('login', [AuthenticateController::class, 'singIn'])->name('login');
 Route::post('authenticate', [AuthenticateController::class, 'authenticateCheck'])->name('authenticate');
 Route::get('register', [AuthenticateController::class, 'register'])->name('register');
+Route::get('logout', [AuthenticateController::class, 'logout'])->name('logout');
+
+Route::get('dashboard', [ProductController::class, 'index'])->name('dashboard');
+
+Route::get('profile-edit', [ProfileController::class, 'edit'])->name('profile_edit');
+Route::get('profile-update-password', [ProfileController::class, 'updatePassword'])->name('profile_update_password');
+Route::post('profile-update-password', [ProfileController::class, 'updatePassword'])->name('profile_update_password');
+
 
 });

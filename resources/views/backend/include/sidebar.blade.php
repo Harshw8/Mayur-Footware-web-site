@@ -5,7 +5,7 @@
           <img src="assets/images/logo-icon.png" class="logo-img" alt="">
         </div>
         <div class="logo-name flex-grow-1">
-          <h5 class="mb-0">Maxton</h5>
+          <h5 class="mb-0">Mayur Footware</h5>
         </div>
         <div class="sidebar-close">
           <span class="material-icons-outlined">close</span>
@@ -14,6 +14,14 @@
       <div class="sidebar-nav">
           <!--navigation-->
           <ul class="metismenu" id="sidenav">
+
+          <li>
+            <a href="{{ route('backend.dashboard') }}">
+                    <div class="parent-icon"><i class="material-icons-outlined">join_right</i>
+                    </div>
+                    <div class="menu-title">Dashboard</div>
+                </a>
+            </li>
 
           <li>
             <a href="{{ route('backend.category_list') }}">

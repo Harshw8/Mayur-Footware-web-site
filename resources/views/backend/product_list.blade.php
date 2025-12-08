@@ -31,8 +31,8 @@
                         <td>1</td>
                         <td>Harsh</td>
                         <td>Adidas</td>
-                        <td>Shoes
-                        <td>
+                        <td>Shoes</td>
+                        <td></td>
                         <td>7</td>
                         <td>100</td>
                         <td>white</td>
@@ -50,8 +50,8 @@
                         <td>2</td>
                         <td>Dhruv</td>
                         <td>Nike</td>
-                        <td>Loffer
-                        <td>
+                        <td>Loffer</td>
+                        <td></td>
                         <td>6</td>
                         <td>170</td>
                         <td>white</td>

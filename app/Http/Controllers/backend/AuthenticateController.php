@@ -18,4 +18,9 @@ class AuthenticateController extends Controller
     {
         return view('backend.register');
     }
+
+    public function logout()
+    {
+        return redirect()->route('backend.login');
+    }
 }
