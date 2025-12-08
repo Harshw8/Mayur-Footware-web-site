@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\backend\CategoryController;
 use App\Http\Controllers\backend\BrandController;
 use App\Http\Controllers\backend\ProductController;
+use App\Http\Controllers\backend\AuthenticateController;
 
 Route::get('/', function () {
     return view('welcome');
@@ -23,3 +24,7 @@ Route::get('product-list', [ProductController::class, 'index'])->name('product_l
 Route::get('product-create', [ProductController::class, 'create'])->name('product_create');
 Route::get('product-edit', [ProductController::class, 'edit'])->name('product_edit');
 Route::get('product-delete', [ProductController::class, 'delete'])->name('product_delete');
+
+Route::get('login', [AuthenticateController::class, 'singIn'])->name('login');
+Route::post('authenticate', [AuthenticateController::class, 'authenticateCheck'])->name('authenticate');
+Route::get('register', [AuthenticateController::class, 'register'])->name('register');

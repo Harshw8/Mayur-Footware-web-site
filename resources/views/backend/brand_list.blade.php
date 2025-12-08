@@ -1,11 +1,11 @@
 @extends('backend.layout.master_layout')
 
 @section('main_content')
-        <h1>Brand List</h1>
-        <div class="card">
-            <div class="card-header">
-         <a href="{{ route('brand_create') }}" class="btn btn-primary px-5">Add New Brand</a>
-            </div>
+    <h1>Brand List</h1>
+    <div class="card">
+        <div class="card-header">
+            <a href="{{ route('brand_create') }}" class="btn btn-primary px-5">Add New Brand</a>
+        </div>
         <table class="table table-bordered mb-0">
             <thead>
                 <tr>
@@ -24,10 +24,8 @@
                     <td>2025-12-06</td>
                     <td>2025-12-06</td>
                     <td>
-                        <a class="btn btn-primary px-5"
-                        href="{{ route('brand_edit') }}">Edit</a></br>
-                        <a class="btn btn-danger px-5"
-                        href="{{ route('brand_delete') }}">Delete</a>
+                        <a class="btn btn-primary px-5" href="{{ route('brand_edit') }}">Edit</a></br>
+                        <a class="btn btn-danger px-5" href="{{ route('brand_delete') }}">Delete</a>
                     </td>
                 </tr>
                 <tr>
@@ -36,13 +34,11 @@
                     <td>2025-12-06</td>
                     <td>2025-12-06</td>
                     <td>
-                       <a class="btn btn-primary px-5"
-                       href="{{ route('brand_edit') }}">Edit</a></br>
-                       <a class="btn btn-danger px-5"
-                       href="{{ route('brand_delete') }}">Delete</a>
+                        <a class="btn btn-primary px-5" href="{{ route('brand_edit') }}">Edit</a></br>
+                        <a class="btn btn-danger px-5" href="{{ route('brand_delete') }}">Delete</a>
                     </td>
                 </tr>
             </tbody>
         </table>
-     </div>
+    </div>
 @endsection
