@@ -49,6 +49,4 @@ Route::get('change-password', [ProfileController::class, 'changePassword'])->nam
 Route::post('change-password', [ProfileController::class, 'updatePassword'])->name('profile_change_password.submit');
 Route::get('string-test', [ProfileController::class, 'stringTest'])->name('string_test');
 
-
-
 });
