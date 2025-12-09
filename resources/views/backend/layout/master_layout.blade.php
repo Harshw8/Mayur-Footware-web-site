@@ -31,14 +31,14 @@
 
 </head>
 
-<body>
+<body class="d-flex flex-column min-vh-100">
 
   @include('backend.include.header')
 
    @include('backend.include.sidebar')
 
   <!--start main wrapper-->
-  <main class="main-wrapper">
+  <main class="main-wrapper flex-grow-1 d-flex flex-column">
     <div class="main-content">
       @yield('main_content')
 

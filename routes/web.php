@@ -11,13 +11,14 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('category-list', fn() => redirect('/backend/category-list'));
-Route::get('brand-list', fn() => redirect('/backend/brand-list'));
-Route::get('product-list', fn() => redirect('/backend/product-list'));
-Route::get('login', fn() => redirect('/backend/login'));
-Route::get('register', fn() => redirect('/backend/register'));
-Route::get('dashboard', fn() => redirect('/backend/dashboard'));
-Route::get('profile-update-password', fn() => redirect('/backend/profile-update-password'));
+Route::redirect('category-list', 'backend/category-list');
+Route::redirect('brand-list', 'backend/brand-list');
+Route::redirect('product-list', 'backend/product-list');
+Route::redirect('login', 'backend/login');
+Route::redirect('register', 'backend/register');
+Route::redirect('dashboard', 'backend/dashboard');
+Route::redirect('profile-update-password', 'backend/profile-update-password');
+
 
 Route::prefix('backend')->name('backend.')->group(function () {
 
@@ -44,8 +45,10 @@ Route::get('logout', [AuthenticateController::class, 'logout'])->name('logout');
 Route::get('dashboard', [ProductController::class, 'index'])->name('dashboard');
 
 Route::get('profile-edit', [ProfileController::class, 'edit'])->name('profile_edit');
-Route::get('profile-update-password', [ProfileController::class, 'updatePassword'])->name('profile_update_password');
-Route::post('profile-update-password', [ProfileController::class, 'updatePassword'])->name('profile_update_password');
+Route::get('change-password', [ProfileController::class, 'changePassword'])->name('profile_change_password');
+Route::post('change-password', [ProfileController::class, 'updatePassword'])->name('profile_change_password.submit');
+Route::get('string-test', [ProfileController::class, 'stringTest'])->name('string_test');
+
 
 
 });

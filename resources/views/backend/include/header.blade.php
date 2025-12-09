@@ -4,7 +4,11 @@
 
     <!-- LEFT SIDE ITEMS -->
     <ul class="navbar-nav me-auto align-items-center gap-3">
-      <ul class="navbar-nav align-items-center gap-3">
+      <!-- Add left-side nav items here if needed -->
+    </ul>
+
+    <!-- RIGHT SIDE ITEMS -->
+    <ul class="navbar-nav align-items-center gap-3">
 
       <!-- Cart -->
       <li class="nav-item d-md-flex d-none">
@@ -14,39 +18,39 @@
         </a>
       </li>
 
-    </ul>
-
       <!-- Profile -->
       <li class="nav-item dropdown">
-        <a href="javascript:;" class="dropdown-toggle dropdown-toggle-nocaret" data-bs-toggle="dropdown">
-          <img src="assets/images/avatars/01.png" class="rounded-circle p-1 border" width="45" height="45" alt="">
+        <a href="javascript:;" class="dropdown-toggle" id="profileDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+          <img src="assets/images/avatars/01.png" class="rounded-circle p-1 border" width="45" height="45" alt="Profile">
         </a>
 
         <!-- DROPDOWN -->
-        <div class="dropdown-menu dropdown-user shadow">
-          <a class="dropdown-item gap-2 py-2" href="javascript:;">
-            <div class="text-center">
-              <img src="assets/images/avatars/01.png" class="rounded-circle p-1 shadow mb-3" width="90" height="90" alt="">
-              <h5 class="user-name mb-0 fw-bold">Hello, Jhon</h5>
-            </div>
-          </a>
+        <ul class="dropdown-menu dropdown-menu-end shadow p-0" aria-labelledby="profileDropdown" style="min-width: 250px; max-height: 400px; overflow-y: auto;">
+          <li class="text-center py-3 border-bottom">
+            <img src="assets/images/avatars/01.png" class="rounded-circle p-1 shadow mb-2" width="90" height="90" alt="Profile">
+            <h5 class="user-name mb-0 fw-bold">Hello, Jhon</h5>
+          </li>
 
-          <hr class="dropdown-divider">
+          <li>
+            <a class="dropdown-item d-flex align-items-center gap-2 py-2" href="{{ route('backend.profile_edit') }}">
+              <i class="material-icons-outlined">person_outline</i> Profile
+            </a>
+          </li>
 
-          <a class="dropdown-item d-flex align-items-center gap-2 py-2" href="{{ route('backend.profile_edit') }}">
-            <i class="material-icons-outlined">person_outline</i>Profile
-          </a>
+          <li>
+            <a class="dropdown-item d-flex align-items-center gap-2 py-2" href="{{ route('backend.profile_change_password') }}">
+              <i class="material-icons-outlined">local_bar</i> Change Password
+            </a>
+          </li>
 
-          <a class="dropdown-item d-flex align-items-center gap-2 py-2" href="{{ route('backend.profile_update_password') }}">
-            <i class="material-icons-outlined">local_bar</i>Change Password
-          </a>
-          
-          <hr class="dropdown-divider">
+          <li><hr class="dropdown-divider"></li>
 
-          <a class="dropdown-item d-flex align-items-center gap-2 py-2" href="{{ route('backend.logout') }}">
-            <i class="material-icons-outlined">power_settings_new</i>Logout
-          </a>
-        </div>
+          <li>
+            <a class="dropdown-item d-flex align-items-center gap-2 py-2" href="{{ route('backend.logout') }}">
+              <i class="material-icons-outlined">power_settings_new</i> Logout
+            </a>
+          </li>
+        </ul>
       </li>
 
     </ul>

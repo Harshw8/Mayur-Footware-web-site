@@ -1,29 +1,32 @@
 @extends('backend.layout.master_layout')
 
 @section('main_content')
-    <h1>Brand Create</h1>
+    <h1 class="breadcrumb-title pe-3">Brand Create</h1>
+
     <div class="card col-md-6">
         <div class="card-body">
-            <table class="table table-bordered mb-0">
-                <tbody>
-                    <div class="row mt-2">
-                        <div class="col-md-4">
-                            <div>
-                                <label for="name" class="form-label">Name:</label>
-                                <input type="text" name="name" id="name" class="form-control">
-                            </div>
-                        </div>
+
+            <form action="" method="POST" enctype="multipart/form-data">
+                @csrf
+
+                <div class="row align-items-end">
+                    <div class="col-md-8">
+                        <label for="name" class="form-label">Name:</label>
+                        <input 
+                            type="text" 
+                            name="name" 
+                            id="name" 
+                            class="form-control"
+                            placeholder="Enter Brand Name">
                     </div>
 
-                    <div class="row mt-2">
-                        <div class="col-md-12">
-                            <div>
-                                <button type="submit" class="btn btn-grd-primary px-4">Submit</button>
-                            </div>
-                        </div>
+                    <div class="col-md-4">
+                        <button type="submit" class="btn btn-primary w-100 mt-4">Submit</button>
                     </div>
-                </tbody>
-            </table>
+                </div>
+
+            </form>
+
         </div>
     </div>
 @endsection
