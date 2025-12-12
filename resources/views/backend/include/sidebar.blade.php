@@ -11,45 +11,40 @@
             <span class="material-icons-outlined">close</span>
         </div>
     </div>
+    @php
+    $currentRoute = Route::currentRouteName();
 
+    $dashboardRoute = ['backend.dashboard'];
+    $catergoryRoute = ['backend.category_list','backend.category_create','backend.category_edit'];
+    $brandRoute = ['backend.brand_list','backend.brand_create','backend.brand_edit'];
+    $productRoute = ['backend.product_list','backend.product_create','backend.product_edit'];
+    @endphp
     <div class="sidebar-nav">
         <!--navigation-->
         <ul class="metismenu" id="sidenav">
 
-            <li class="{{ Route::currentRouteName() == 'backend.dashboard' ? 'mm-active' : '' }}">
+            <li class="{{ in_array(Route::currentRouteName(), $dashboardRoute) ? 'mm-active' : '' }}">
                 <a href="{{ route('backend.dashboard') }}">
                     <div class="parent-icon"><i class="material-icons-outlined">join_right</i></div>
                     <div class="menu-title">Dashboard</div>
                 </a>
             </li>
 
-            <li class="{{ in_array(Route::currentRouteName(), [
-                    'backend.category_list',
-                    'backend.category_create',
-                    'backend.category_edit'
-                ]) ? 'mm-active' : '' }}">
+            <li class="{{ in_array($currentRoute, $catergoryRoute) ? 'mm-active' : '' }}">
                 <a href="{{ route('backend.category_list') }}">
                     <div class="parent-icon"><i class="material-icons-outlined">join_right</i></div>
                     <div class="menu-title">Category</div>
                 </a>
             </li>
 
-            <li class="{{ in_array(Route::currentRouteName(), [
-                    'backend.brand_list',
-                    'backend.brand_create',
-                    'backend.brand_edit'
-                ]) ? 'mm-active' : '' }}">
+            <li class="{{ in_array(Route::currentRouteName(), $brandRoute) ? 'mm-active' : '' }}">
                 <a href="{{ route('backend.brand_list') }}">
                     <div class="parent-icon"><i class="material-icons-outlined">join_right</i></div>
                     <div class="menu-title">Brand</div>
                 </a>
             </li>
 
-            <li class="{{ in_array(Route::currentRouteName(), [
-                    'backend.product_list',
-                    'backend.product_create',
-                    'backend.product_edit'
-                ]) ? 'mm-active' : '' }}">
+            <li class="{{ in_array(Route::currentRouteName(), $productRoute) ? 'mm-active' : '' }}">
                 <a href="{{ route('backend.product_list') }}">
                     <div class="parent-icon"><i class="material-icons-outlined">join_right</i></div>
                     <div class="menu-title">Product</div>
