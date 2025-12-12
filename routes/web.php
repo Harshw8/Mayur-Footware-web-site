@@ -22,10 +22,12 @@ Route::redirect('profile-update-password', 'backend/profile-update-password');
 
 Route::prefix('backend')->name('backend.')->group(function () {
 
-Route::get('category-list', [CategoryController::class, 'index'])->name('category_list');
-Route::get('category-edit', [CategoryController::class, 'edit'])->name('category_edit');
-Route::get('category-create', [CategoryController::class, 'create'])->name('category_create');
-Route::get('category-delete', [CategoryController::class, 'delete'])->name('category_delete');
+ Route::get('category-list', [CategoryController::class, 'index'])->name('category_list');
+ Route::get('category-create', [CategoryController::class, 'create'])->name('category_create');
+ Route::post('category-store', [CategoryController::class, 'store'])->name('category_store');
+ Route::get('category-edit/{id}', [CategoryController::class, 'edit'])->name('category_edit');
+ Route::post('category-update/{id}', [CategoryController::class, 'update'])->name('category_update');
+ Route::get('category-delete/{id}', [CategoryController::class, 'delete'])->name('category_delete');
 
 Route::get('brand-list', [BrandController::class, 'index'])->name('brand_list');
 Route::get('brand-create', [BrandController::class, 'create'])->name('brand_create');
@@ -47,6 +49,5 @@ Route::get('dashboard', [ProductController::class, 'index'])->name('dashboard');
 Route::get('profile-edit', [ProfileController::class, 'edit'])->name('profile_edit');
 Route::get('change-password', [ProfileController::class, 'changePassword'])->name('profile_change_password');
 Route::post('change-password', [ProfileController::class, 'updatePassword'])->name('profile_change_password.submit');
-Route::get('string-test', [ProfileController::class, 'stringTest'])->name('string_test');
 
 });

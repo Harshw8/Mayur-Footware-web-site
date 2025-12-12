@@ -1,13 +1,19 @@
 @extends('backend.layout.master_layout')
 
 @section('main_content')
-    <div class="d-flex justify-content-between align-items-center mb-3">
-        <h1 class="breadcrumb-title pe-3">Category List</h1>
-        <a href="{{ route('backend.category_create') }}" class="btn btn-primary px-5">Add New Category</a>
-    </div>
+    <h1 class="breadcrumb-title pe-3 mb-3">Category List</h1>
 
     <div class="card">
         <div class="card-body p-0">
+            <div class="d-flex justify-content-end p-3">
+                <a href="{{ route('backend.category_create') }}" class="btn btn-primary px-5">
+                    Add New Category
+                </a>
+            </div>
+           @if(session()->has('success'))
+        <p>{{ session()->get('success') }}</p>
+    @endif
+
             <table class="table table-bordered mb-0">
                 <thead>
                     <tr>
@@ -20,28 +26,27 @@
                 </thead>
 
                 <tbody>
+                    @if ($categories->isEmpty())
                     <tr>
-                        <td>1</td>
-                        <td>Harsh</td>
-                        <td>2025-12-06</td>
-                        <td>2025-12-06</td>
+                        <td colspan="4">No categories found</td>
+                </tr>
+            @endif
+        @foreach ($categories as $category)
+                    <tr>
+                        <td>{{ $category->id }}</td>
+                        <td>{{ $category->name }}</td>
+                        <td>{{ $category->created_at }}</td>
+                        <td>{{ $category->updated_at }}</td>
                         <td>
-                            <a class="btn btn-primary px-5 mb-1" href="{{ route('backend.category_edit') }}">Edit</a>
-                            <a class="btn btn-danger px-5" href="{{ route('backend.category_delete') }}">Delete</a>
+                            <a href="{{ route('backend.category_edit', $category->id) }}" class="btn btn-primary">Edit</a>
+                            <a href="{{ route('backend.category_delete', $category->id) }}" class="btn btn-danger">Delete</a>
                         </td>
                     </tr>
-                    <tr>
-                        <td>2</td>
-                        <td>Dhruv</td>
-                        <td>2025-12-06</td>
-                        <td>2025-12-06</td>
-                        <td>
-                            <a class="btn btn-primary px-5 mb-1" href="{{ route('backend.category_edit') }}">Edit</a>
-                            <a class="btn btn-danger px-5" href="{{ route('backend.category_delete') }}">Delete</a>
-                        </td>
-                    </tr>
+                @endforeach
                 </tbody>
             </table>
+
         </div>
     </div>
+
 @endsection

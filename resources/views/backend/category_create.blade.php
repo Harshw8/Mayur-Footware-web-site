@@ -6,18 +6,13 @@
     <div class="card col-md-6">
         <div class="card-body">
 
-            <form action="" method="POST" enctype="multipart/form-data">
+            <form action="{{ route('backend.category_store') }}" method="POST" enctype="multipart/form-data">
                 @csrf
 
                 <div class="row align-items-end">
                     <div class="col-md-8">
                         <label for="name" class="form-label">Name:</label>
-                        <input 
-                            type="text" 
-                            name="name" 
-                            id="name" 
-                            class="form-control"
-                            placeholder="Enter Category Name">
+                        <input type="text" name="name" id="name" class="form-control" placeholder="Enter Category Name">
                     </div>
 
                     <div class="col-md-4">
