@@ -3,11 +3,14 @@
 @section('main_content')
     <div class="d-flex justify-content-between align-items-center mb-3">
         <h1 class="breadcrumb-title pe-3">Brand List</h1>
-        <a href="{{ route('backend.brand_create') }}" class="btn btn-primary px-5">Add New Brand</a>
     </div>
 
     <div class="card">
         <div class="card-body p-0">
+            <div class="d-flex justify-content-end p-3">
+                <a href="{{ route('backend.brand_create') }}" class="btn btn-primary px-5">Add New Brand</a>
+            </div>
+
             <table class="table table-bordered mb-0">
                 <thead>
                     <tr>
@@ -30,6 +33,7 @@
                             <a class="btn btn-danger px-5" href="{{ route('backend.brand_delete') }}">Delete</a>
                         </td>
                     </tr>
+
                     <tr>
                         <td>2</td>
                         <td>Nike</td>
@@ -42,6 +46,7 @@
                     </tr>
                 </tbody>
             </table>
+
         </div>
     </div>
 @endsection

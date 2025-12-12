@@ -1,13 +1,16 @@
 @extends('backend.layout.master_layout')
 
 @section('main_content')
-    <div class="d-flex justify-content-between align-items-center mb-3">
-        <h1 class="breadcrumb-title pe-3">Product List</h1>
-        <a href="{{ route('backend.product_create') }}" class="btn btn-primary px-5">Add New Product</a>
-    </div>
+    <h1 class="breadcrumb-title pe-3 mb-3">Product List</h1>
 
     <div class="card">
         <div class="card-body p-0">
+            <div class="d-flex justify-content-end p-3">
+                <a href="{{ route('backend.product_create') }}" class="btn btn-primary px-5">
+                    Add New Product
+                </a>
+            </div>
+
             <table class="table table-bordered mb-0">
                 <thead>
                     <tr>
@@ -70,6 +73,8 @@
                     </tr>
                 </tbody>
             </table>
+
         </div>
     </div>
+
 @endsection
