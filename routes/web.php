@@ -31,8 +31,10 @@ Route::prefix('backend')->name('backend.')->group(function () {
 
 Route::get('brand-list', [BrandController::class, 'index'])->name('brand_list');
 Route::get('brand-create', [BrandController::class, 'create'])->name('brand_create');
-Route::get('brand-edit', [BrandController::class, 'edit'])->name('brand_edit');
-Route::get('brand-delete', [BrandController::class, 'delete'])->name('brand_delete');
+Route::post('brand-store', [BrandController::class, 'store'])->name('brand_store');
+Route::get('brand-edit/{id}', [BrandController::class, 'edit'])->name('brand_edit');
+Route::post('brand-update/{id}', [BrandController::class, 'update'])->name('brand_update');
+Route::get('brand-delete/{id}', [BrandController::class, 'delete'])->name('brand_delete');
 
 Route::get('product-list', [ProductController::class, 'index'])->name('product_list');
 Route::get('product-create', [ProductController::class, 'create'])->name('product_create');

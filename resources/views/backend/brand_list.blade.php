@@ -11,6 +11,9 @@
                 <a href="{{ route('backend.brand_create') }}" class="btn btn-primary px-5">Add New Brand</a>
             </div>
 
+            @if(session()->has('success'))
+            <p>{{ session()->get('success') }}</p>
+        @endif
             <table class="table table-bordered mb-0">
                 <thead>
                     <tr>
@@ -23,27 +26,23 @@
                 </thead>
 
                 <tbody>
+                    @if ($brands->isEmpty())
                     <tr>
-                        <td>1</td>
-                        <td>Adidas</td>
-                        <td>2025-12-06</td>
-                        <td>2025-12-06</td>
+                        <td colspan="4">No brands found</td>
+                </tr>
+            @endif
+                    @foreach ($brands as $brand)
+                    <tr>
+                        <td>{{ $brand->id }}</td>
+                        <td>{{ $brand->name }}</td>
+                        <td>{{ $brand->created_at }}</td>
+                        <td>{{ $brand->updated_at }}</td>
                         <td>
-                            <a class="btn btn-primary px-5 mb-1" href="{{ route('backend.brand_edit') }}">Edit</a>
-                            <a class="btn btn-danger px-5" href="{{ route('backend.brand_delete') }}">Delete</a>
+                            <a href="{{ route('backend.brand_edit', $brand->id) }}" class="btn btn-primary">Edit</a>
+                            <a href="{{ route('backend.brand_delete', $brand->id) }}" class="btn btn-danger">Delete</a>
                         </td>
                     </tr>
-
-                    <tr>
-                        <td>2</td>
-                        <td>Nike</td>
-                        <td>2025-12-06</td>
-                        <td>2025-12-06</td>
-                        <td>
-                            <a class="btn btn-primary px-5 mb-1" href="{{ route('backend.brand_edit') }}">Edit</a>
-                            <a class="btn btn-danger px-5" href="{{ route('backend.brand_delete') }}">Delete</a>
-                        </td>
-                    </tr>
+                    @endforeach
                 </tbody>
             </table>
 
