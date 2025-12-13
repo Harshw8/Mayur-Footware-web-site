@@ -28,7 +28,7 @@
         <ul class="dropdown-menu dropdown-menu-end shadow p-0" aria-labelledby="profileDropdown" style="min-width: 250px; max-height: 400px; overflow-y: auto;">
           <li class="text-center py-3 border-bottom">
             <img src="assets/images/avatars/01.png" class="rounded-circle p-1 shadow mb-2" width="90" height="90" alt="Profile">
-            <h5 class="user-name mb-0 fw-bold">Hello, Jhon</h5>
+            <h5 class="user-name mb-0 fw-bold">Hello, {{ auth()->guard('web')->user()->name }}</h5>
           </li>
 
           <li>
@@ -46,7 +46,7 @@
           <li><hr class="dropdown-divider"></li>
 
           <li>
-            <a class="dropdown-item d-flex align-items-center gap-2 py-2" href="{{ route('backend.logout') }}">
+            <a class="dropdown-item d-flex align-items-center gap-2 py-2" href="{{ route('backend.logout') }}"><i
               <i class="material-icons-outlined">power_settings_new</i> Logout
             </a>
           </li>

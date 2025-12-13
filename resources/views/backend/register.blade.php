@@ -43,15 +43,22 @@
                         <p class="mb-0">Enter your credentials to create your account</p>
 
                         <div class="form-body my-4">
-                            <form class="row g-3" method="POST">
+                            <form class="row g-3" method="POST" action="{{ route('backend.register_store_user') }}">
                                 @csrf
                                 <div class="col-12">
                                     <label for="inputUsername" class="form-label">Name</label>
-                                    <input type="text" class="form-control" id="inputUsername" name="name" placeholder="Jhon">
+                                    <input type="text" class="form-control" id="inputUsername" name="name" placeholder="Jhon" value="{{ old('name')}}">
+                                     @error("name")
+                                        <div class="text-danger">{{ $message }}</div>
+                                    @enderror
                                 </div>
                                 <div class="col-12">
                                     <label for="inputEmailAddress" class="form-label">Email Address</label>
-                                    <input type="email" class="form-control" name="email" id="inputEmailAddress" placeholder="example@user.com">
+                                    <input type="email" class="form-control" name="email" id="inputEmailAddress" value="{{ old('email')}}"
+                                        placeholder="example@user.com">
+                                     @error("email")
+                                        <div class="text-danger">{{ $message }}</div>
+                                    @enderror
                                 </div>
                                 <div class="col-12">
                                     <label for="inputChoosePassword" class="form-label">Password</label>
@@ -61,7 +68,13 @@
                                         <a href="javascript:;" class="input-group-text bg-transparent"><i
                                                 class="bi bi-eye-slash-fill"></i></a>
                                     </div>
+                                    @error("password")
+                                        <div class="text-danger">{{ $message }}</div>
+                                    @enderror
                                 </div>
+                                
+                                
+                                
                                 <div class="col-12">
                                     <div class="d-grid">
                                         <button type="submit" class="btn btn-grd-danger">Register</button>
