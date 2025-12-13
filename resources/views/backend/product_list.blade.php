@@ -11,6 +11,10 @@
                 </a>
             </div>
 
+            @if(session()->has('success'))
+            <p>{{ session()->get('success') }}</p>
+        @endif
+
             <table class="table table-bordered mb-0">
                 <thead>
                     <tr>
@@ -32,45 +36,40 @@
                 </thead>
 
                 <tbody>
-                    <tr>
-                        <td>1</td>
-                        <td>Harsh</td>
-                        <td>Adidas</td>
-                        <td>Shoes</td>
-                        <td></td>
-                        <td>7</td>
-                        <td>100</td>
-                        <td>White</td>
-                        <td>1000</td>
-                        <td>500</td>
-                        <td>Good Quality</td>
-                        <td>2025-12-06</td>
-                        <td>2025-12-06</td>
-                        <td>
-                            <a class="btn btn-primary px-4 mb-1" href="{{ route('backend.product_edit') }}">Edit</a>
-                            <a class="btn btn-danger px-4" href="{{ route('backend.product_delete') }}">Delete</a>
-                        </td>
-                    </tr>
+                    @if($products->isEmpty())
+                        <tr>
+                            <td colspan="14" class="text-center">No products found</td>
+                        </tr>
+                    @endif
 
-                    <tr>
-                        <td>2</td>
-                        <td>Dhruv</td>
-                        <td>Nike</td>
-                        <td>Loafer</td>
-                        <td></td>
-                        <td>6</td>
-                        <td>170</td>
-                        <td>White</td>
-                        <td>1000</td>
-                        <td>500</td>
-                        <td>Good Quality</td>
-                        <td>2025-12-06</td>
-                        <td>2025-12-06</td>
-                        <td>
-                            <a class="btn btn-primary px-4 mb-1" href="{{ route('backend.product_edit') }}">Edit</a>
-                            <a class="btn btn-danger px-4" href="{{ route('backend.product_delete') }}">Delete</a>
-                        </td>
-                    </tr>
+                    @foreach($products as $product)
+                        <tr>
+                            <td>{{ $product->id }}</td>
+                            <td>{{ $product->category->name ?? '-' }}</td>
+                            <td>{{ $product->brand->name ?? '-' }}</td>
+                            <td>{{ $product->name }}</td>
+                            <td>
+                                <img src="{{ asset('storage/' . $product->image) }}" height="50">
+                            </td>
+                            <td>{{ $product->size }}</td>
+                            <td>{{ $product->stock }}</td>
+                            <td>{{ $product->color }}</td>
+                            <td>{{ $product->original_price }}</td>
+                            <td>{{ $product->discount_price }}</td>
+                            <td>{{ $product->description }}</td>
+                            <td>{{ $product->created_at }}</td>
+                            <td>{{ $product->updated_at }}</td>
+
+                            <td>
+                                <a href="{{ route('backend.product_edit', $product->id) }}" class="btn btn-primary btn-sm">
+                                    Edit
+                                </a>
+                                <a href="{{ route('backend.product_delete', $product->id) }}" class="btn btn-danger btn-sm">
+                                    Delete
+                                </a>
+                            </td>
+                        </tr>
+                    @endforeach
                 </tbody>
             </table>
 

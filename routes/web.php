@@ -38,8 +38,10 @@ Route::get('brand-delete/{id}', [BrandController::class, 'delete'])->name('brand
 
 Route::get('product-list', [ProductController::class, 'index'])->name('product_list');
 Route::get('product-create', [ProductController::class, 'create'])->name('product_create');
-Route::get('product-edit', [ProductController::class, 'edit'])->name('product_edit');
-Route::get('product-delete', [ProductController::class, 'delete'])->name('product_delete');
+Route::post('product-store', [ProductController::class, 'store'])->name('product_store');
+Route::get('product-edit/{id}', [ProductController::class, 'edit'])->name('product_edit');
+Route::post('product-update/{id}', [ProductController::class, 'update'])->name('product_update');
+Route::get('product-delete/{id}', [ProductController::class, 'delete'])->name('product_delete');
 
 Route::get('login', [AuthenticateController::class, 'singIn'])->name('login');
 Route::post('authenticate', [AuthenticateController::class, 'authenticateCheck'])->name('authenticate');

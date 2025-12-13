@@ -1,12 +1,12 @@
 @extends('backend.layout.master_layout')
 
 @section('main_content')
-<h1 class="breadcrumb-title pe-3">Product Add</h1>
+<h1 class="breadcrumb-title pe-3">Add Product</h1>
 
 <div class="card col-md-8">
     <div class="card-body">
 
-        <form action="" method="POST" enctype="multipart/form-data">
+        <form action="{{ route('backend.product_store') }}" method="POST" enctype="multipart/form-data">
             @csrf
 
             <div class="row mt-2">
@@ -14,6 +14,9 @@
                     <label for="category_id" class="form-label">Category:</label>
                     <select name="category_id" id="category_id" class="form-select">
                         <option value="">-- Select Category --</option>
+                        @foreach($categories as $category)
+                            <option value="{{ $category->id }}">{{ $category->name }}</option>
+                        @endforeach
                     </select>
                 </div>
 
@@ -21,21 +24,24 @@
                     <label for="brand_id" class="form-label">Brand:</label>
                     <select name="brand_id" id="brand_id" class="form-select">
                         <option value="">-- Select Brand --</option>
+                        @foreach($brands as $brand)
+                            <option value="{{ $brand->id }}">{{ $brand->name }}</option>
+                        @endforeach
                     </select>
                 </div>
             </div>
 
             <div class="row mt-2">
                 <div class="col-md-6">
-                    <label for="name" class="form-label">Name:</label>
+                    <label for="name" class="form-label">Product Name:</label>
                     <input type="text" name="name" id="name" class="form-control" placeholder="Enter Product Name">
                 </div>
             </div>
 
             <div class="row mt-2">
                 <div class="col-md-6">
-                    <label for="image">Image:</label>
-                    <input type="file" name="image" id="image" class="form-control" placeholder="Upload Product Image">
+                    <label for="image" class="form-label">Product Image:</label>
+                    <input type="file" name="image" id="image" class="form-control">
                 </div>
             </div>
 
@@ -85,7 +91,7 @@
 
             <div class="row mt-3">
                 <div class="col-md-12">
-                    <button type="submit" class="btn btn-primary px-5 mb-1">Submit</button>
+                    <button type="submit" class="btn btn-primary px-5 mb-1">Add Product</button>
                 </div>
             </div>
 
